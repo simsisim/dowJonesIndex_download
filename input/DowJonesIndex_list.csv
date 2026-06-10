@@ -1,0 +1,104 @@
+sector,symbol,name
+Communication Services Sector,$DJUSAV,Media Agencies
+Communication Services Sector,$DJUSBC,Broadcasting & Entertainment
+Communication Services Sector,$DJUSFC,Fixed Line Telecommunications
+Communication Services Sector,$DJUSNS,Internet
+Communication Services Sector,$DJUSPB,Publishing
+Communication Services Sector,$DJUSWC,Mobile Telecommunications
+Consumer Discretionary Sector,$DJUSAT,Auto Parts
+Consumer Discretionary Sector,$DJUSAU,Automobiles
+Consumer Discretionary Sector,$DJUSBE,Business Training & Employment Agencies
+Consumer Discretionary Sector,$DJUSCA,Gambling
+Consumer Discretionary Sector,$DJUSCF,Clothing & Accessories
+Consumer Discretionary Sector,$DJUSCS,Specialized Consumer Services
+Consumer Discretionary Sector,$DJUSFH,Furnishings
+Consumer Discretionary Sector,$DJUSFT,Footwear
+Consumer Discretionary Sector,$DJUSHB,Home Construction
+Consumer Discretionary Sector,$DJUSHD,Durable Household Products
+Consumer Discretionary Sector,$DJUSHI,Home Improvement Retailers
+Consumer Discretionary Sector,$DJUSLG,Hotels
+Consumer Discretionary Sector,$DJUSRA,Apparel Retailers
+Consumer Discretionary Sector,$DJUSRB,Broadline Retailers
+Consumer Discretionary Sector,$DJUSRP,Recreational Products
+Consumer Discretionary Sector,$DJUSRQ,Recreational Services
+Consumer Discretionary Sector,$DJUSRS,Specialty Retailers
+Consumer Discretionary Sector,$DJUSRU,Restaurants & Bars
+Consumer Discretionary Sector,$DJUSTT,Travel & Tourism
+Consumer Discretionary Sector,$DJUSTY,Toys
+Consumer Discretionary Sector,$DWCTIR,Tires
+Consumer Staples Sector,$DJUSCM,Personal Products
+Consumer Staples Sector,$DJUSDB,Brewers
+Consumer Staples Sector,$DJUSFD,Food Retailers & Wholesalers
+Consumer Staples Sector,$DJUSFP,Food Products
+Consumer Staples Sector,$DJUSGT,General Retailers
+Consumer Staples Sector,$DJUSHN,Nondurable Household Products
+Consumer Staples Sector,$DJUSRD,Drug Retailers
+Consumer Staples Sector,$DJUSSD,Soft Drinks
+Consumer Staples Sector,$DJUSTB,Tobacco
+Consumer Staples Sector,$DJUSVN,Distillers & Vintners
+Energy Sector,$DJUSOI,Oil Equipment & Services
+Energy Sector,$DJUSOL,Integrated Oil & Gas
+Energy Sector,$DJUSOS,Exploration & Production
+Energy Sector,$DJUSPL,Pipelines
+Energy Sector,$DWCCOA,Coal
+Financial Sector,$DJUSAG,Asset Managers
+Financial Sector,$DJUSBK,Banks
+Financial Sector,$DJUSFA,Financial Administration
+Financial Sector,$DJUSIB,Insurance Brokers
+Financial Sector,$DJUSIL,Life Insurance
+Financial Sector,$DJUSIP,Property & Casualty Insurance
+Financial Sector,$DJUSIU,Reinsurance
+Financial Sector,$DJUSMF,Mortgage Finance
+Financial Sector,$DJUSSB,Investment Services
+Financial Sector,$DJUSSF,Consumer Finance
+Financial Sector,$DJUSSP,Specialty Finance
+Health Care Sector,$DJUSAM,Medical Equipment
+Health Care Sector,$DJUSBT,Biotechnology
+Health Care Sector,$DJUSHP,Health Care Providers
+Health Care Sector,$DJUSMS,Medical Supplies
+Health Care Sector,$DJUSPR,Pharmaceuticals
+Industrial Sector,$DJUSAF,Delivery Services
+Industrial Sector,$DJUSAR,Airlines
+Industrial Sector,$DJUSAS,Aerospace
+Industrial Sector,$DJUSBD,Building Materials & Fixtures
+Industrial Sector,$DJUSDN,Defense
+Industrial Sector,$DJUSDS,Industrial Suppliers
+Industrial Sector,$DJUSFE,Industrial Machinery
+Industrial Sector,$DJUSHR,Commercial Vehicles & Trucks
+Industrial Sector,$DJUSHV,Heavy Construction
+Industrial Sector,$DJUSID,Diversified Industrials
+Industrial Sector,$DJUSIV,Business Support Services
+Industrial Sector,$DJUSMT,Marine Transportation
+Industrial Sector,$DJUSPC,Waste & Disposal Services
+Industrial Sector,$DJUSRR,Railroad
+Industrial Sector,$DJUSTK,Trucking
+Materials Sector,$DJUSAL,Aluminum
+Materials Sector,$DJUSCC,Commodity Chemicals
+Materials Sector,$DJUSCP,Containers & Packaging
+Materials Sector,$DJUSCX,Specialty Chemicals
+Materials Sector,$DJUSMG,Mining
+Materials Sector,$DJUSNF,Nonferrous Metals
+Materials Sector,$DJUSPM,Gold Mining
+Materials Sector,$DJUSST,Steel
+Materials Sector,$DWCPAP,Paper
+Real Estate Sector,$DJUSDT,Diversified REITs
+Real Estate Sector,$DJUSEH,Real Estate Holding & Development
+Real Estate Sector,$DJUSES,Real Estate Services
+Real Estate Sector,$DJUSHL,Hotel & Lodging REITs
+Real Estate Sector,$DJUSIO,Industrial & Office REITs
+Real Estate Sector,$DJUSMR,Mortgage REITs
+Real Estate Sector,$DJUSRL,Retail REITs
+Real Estate Sector,$DJUSRN,Residential REITs
+Real Estate Sector,$DJUSSR,Specialty REITs
+Technology Sector,$DJUSAI,Electronic Equipment
+Technology Sector,$DJUSCR,Computer Hardware
+Technology Sector,$DJUSCT,Telecommunications Equipment
+Technology Sector,$DJUSDV,Computer Services
+Technology Sector,$DJUSEC,Electrical Components & Equipment
+Technology Sector,$DJUSSC,Semiconductors
+Technology Sector,$DJUSSW,Software
+Technology Sector,$DWCREE,Renewable Energy Equipment
+Utilities Sector,$DJUSGU,Gas Distribution
+Utilities Sector,$DJUSMU,Multiutilities
+Utilities Sector,$DJUSVE,Conventional Electricity
+Utilities Sector,$DJUSWU,Water

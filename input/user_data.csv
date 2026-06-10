@@ -1,0 +1,22 @@
+# Dow Jones Index Data Downloader - Configuration,,
+# ================================================,,
+# Format: variable_name,value,description
+# Boolean values: TRUE or FALSE,,
+,,
+# HISTORICAL DATA INTERVALS,,
+# -------------------------,,
+daily_data,TRUE,Download daily (1d) OHLCV data
+weekly_data,FALSE,Download weekly (1wk) OHLCV data — same data as daily for these indexes
+monthly_data,FALSE,Download monthly (1mo) OHLCV data — same data as daily for these indexes
+,,
+# DATA SOURCE PRIORITY,,
+# --------------------,,
+# Sources are tried in order; next source used only if previous fails for a ticker,,
+# Available: yahoo_finance   (others planned: alpha_vantage, eod_historical),
+data_sources,yahoo_finance,Comma-separated list of sources in priority order
+,,
+# START DATES FOR INITIAL (FULL HISTORY) DOWNLOAD,,
+# -------------------------------------------------,,
+start_date_daily,2025-01-01,Start date for daily data on first download
+start_date_weekly,2025-01-01,Start date for weekly data on first download
+start_date_monthly,2025-01-01,Start date for monthly data on first download
