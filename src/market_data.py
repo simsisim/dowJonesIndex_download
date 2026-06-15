@@ -16,6 +16,18 @@ from src.config import PARAMS_DIR
 log = logging.getLogger(__name__)
 
 
+def _to_date_index(index: pd.Index) -> pd.DatetimeIndex:
+    """Return a tz-naive DatetimeIndex (date only, no time component).
+
+    Handles three cases yfinance/pandas can produce:
+      - DatetimeTZDtype index  (yfinance >= 1.x)
+      - object index of tz-aware strings  (old CSVs saved before this fix)
+      - already tz-naive DatetimeIndex
+    """
+    idx = pd.to_datetime(index, utc=True)   # parse everything as UTC-aware
+    return idx.tz_convert(None).normalize() # strip tz, keep date at midnight
+
+
 class IndexDataRetriever:
     """
     Downloads OHLCV data for a list of index tickers from Yahoo Finance.
@@ -105,6 +117,10 @@ class IndexDataRetriever:
         if isinstance(new_data.columns, pd.MultiIndex):
             new_data.columns = new_data.columns.get_level_values(0)
 
+        # Normalize index to tz-naive dates — yfinance >=1.x returns
+        # DatetimeTZDtype; old CSVs may have been saved with offset strings
+        # (e.g. "2026-06-09 00:00:00-04:00").  A mixed index crashes sort_index.
+        new_data.index = _to_date_index(new_data.index)
         new_data.index.name = "Date"
 
         # Keep only OHLCV
@@ -117,7 +133,8 @@ class IndexDataRetriever:
 
         # Merge with existing data
         if os.path.isfile(file_path):
-            existing = pd.read_csv(file_path, index_col="Date", parse_dates=True)
+            existing = pd.read_csv(file_path, index_col="Date")
+            existing.index = _to_date_index(existing.index)
             existing = existing[[c for c in ohlcv if c in existing.columns]]
             merged = pd.concat([existing, new_data])
             merged = merged[~merged.index.duplicated(keep="last")]

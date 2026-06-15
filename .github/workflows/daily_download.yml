@@ -33,13 +33,13 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Download index data
-        run: python main.py
+      - name: Download index data + benchmarks, render snapshot
+        run: python main.py --snapshot
 
       - name: Commit and push new data
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/market_data/ data/logs/
-          git diff --cached --quiet || git commit -m "chore: daily index data update $(date -u +%Y-%m-%d)"
+          git add data/market_data/ data/logs/ data/snapshots.db snapshots/
+          git diff --cached --quiet || git commit -m "chore: daily update $(date -u +%Y-%m-%d)"
           git push
