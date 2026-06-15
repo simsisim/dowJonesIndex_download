@@ -200,4 +200,4 @@ def render_snapshot(
     plt.close(fig)
 
     print(f"  Snapshot saved: {latest}")
-    return out_path
+    return latest

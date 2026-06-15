@@ -17,7 +17,7 @@ Usage:
 
 import argparse
 import os
-from datetime import datetime, date
+from datetime import datetime
 
 import pandas as pd
 import yfinance as yf
@@ -168,11 +168,8 @@ def run_snapshot(benchmark_short: str, sort_by: str):
     from src.snapshot_db import SnapshotDB
     from src.renderer import render_snapshot
 
-    bm_yf    = BENCHMARK_MAP[benchmark_short]
-    bm_safe  = bm_yf.replace("^", "")           # e.g. GSPC
-    today    = date.today().isoformat()
-
-    print(f"\n── Performance snapshot  [{benchmark_short}]  {today} ──")
+    bm_yf   = BENCHMARK_MAP[benchmark_short]
+    bm_safe = bm_yf.replace("^", "")           # e.g. GSPC
 
     tickers_df = load_tickers()
     perf_df    = compute_performance(
@@ -185,9 +182,14 @@ def run_snapshot(benchmark_short: str, sort_by: str):
         print("  No performance data computed — check that data files exist.")
         return
 
+    # Use the actual last trading date from the data, not the run date
+    data_date = perf_df["data_date"].max()
+
+    print(f"\n── Performance snapshot  [{benchmark_short}]  {data_date} ──")
+
     # Store in SQLite
     db = SnapshotDB(DB_PATH)
-    db.upsert(perf_df, benchmark=benchmark_short, snapshot_date=today)
+    db.upsert(perf_df, benchmark=benchmark_short, snapshot_date=data_date)
 
     # Render PNG
     render_snapshot(
@@ -195,7 +197,7 @@ def run_snapshot(benchmark_short: str, sort_by: str):
         benchmark=benchmark_short,
         sort_by=sort_by,
         output_dir=PARAMS_DIR["SNAPSHOTS_DIR"],
-        snapshot_date=today,
+        snapshot_date=data_date,
     )
 
 
