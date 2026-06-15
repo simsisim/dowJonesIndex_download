@@ -194,14 +194,10 @@ def render_snapshot(
     )
 
     # ── save ──────────────────────────────────────────────────────────────────
-    ts_full   = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    fname     = f"Snapshot_{ts_full}.png"
-    out_path  = os.path.join(output_dir, fname)
-    latest    = os.path.join(output_dir, "latest.png")
+    latest   = os.path.join(output_dir, "latest.png")
 
-    plt.savefig(out_path, dpi=150, bbox_inches="tight", facecolor=_BG_DARK)
+    plt.savefig(latest, dpi=150, bbox_inches="tight", facecolor=_BG_DARK)
     plt.close(fig)
-    shutil.copy2(out_path, latest)
 
-    print(f"  Snapshot saved: {out_path}")
+    print(f"  Snapshot saved: {latest}")
     return out_path
