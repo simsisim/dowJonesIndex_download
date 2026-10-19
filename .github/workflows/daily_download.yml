@@ -4,6 +4,9 @@ on:
   schedule:
     # Runs Mon-Fri at 22:00 UTC (after US market close ~4pm EST)
     - cron: "0 22 * * 1-5"
+    # Backup run: Yahoo only serves the latest bar for DJ indexes, so a missed
+    # run loses that day for good. A second run is a no-op if data is current.
+    - cron: "0 4 * * 2-6"
   workflow_dispatch:   # allows manual trigger from GitHub UI
 
 permissions:

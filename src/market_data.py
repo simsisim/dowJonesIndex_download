@@ -96,13 +96,17 @@ class IndexDataRetriever:
 
         latest_file = self._latest_file_date(file_path)
 
-        if latest_file is not None and latest_file >= latest_yf:
+        if latest_file is not None and latest_file > latest_yf:
             self.successful.append(yf_symbol)
             return
 
+        # Re-fetch latest_file itself so a partial bar saved during market hours
+        # gets overwritten by the final close (merge keeps the last duplicate).
         start_date = self.start_date if latest_file is None else \
-                     (latest_file + timedelta(days=1)).strftime("%Y-%m-%d")
-        end_date = datetime.now().strftime("%Y-%m-%d")
+                     latest_file.strftime("%Y-%m-%d")
+        # yfinance's `end` is exclusive and DJ indexes only expose the latest bar,
+        # so end must be after latest_yf or a run before midnight UTC loses that day.
+        end_date = (max(latest_yf, datetime.now().date()) + timedelta(days=1)).strftime("%Y-%m-%d")
 
         try:
             ticker_obj = yf.Ticker(yf_symbol)
