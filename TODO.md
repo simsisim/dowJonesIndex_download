@@ -2,10 +2,10 @@
 
 ## 1. Check that every index gets data from Yahoo Finance
 Yahoo doesn't carry every Dow Jones index.
-- [ ] Compare `input/DowJonesIndex_list.csv` (103 indexes) with `data/market_data/daily/` (102 files)
-  - Known so far: **DJUSEH** has no data file
-- [ ] For each missing index, check whether Yahoo uses a different symbol or doesn't carry it at all
-- [ ] Remove or replace indexes Yahoo doesn't carry
+- [x] 2026-10-19: compared `input/DowJonesIndex_list.csv` (103 indexes) with `data/market_data/daily/` (102 files).
+      Only **DJUSEH** has no data file.
+- [x] 2026-10-19: Yahoo has no data for DJUSEH or DJUSIF under any symbol variant tried
+      (`^X`, `X`, `^X.X`, Yahoo search). Decision: keep both in the list as they are.
 - [ ] After a few runs, check that every file gains one row per trading day (no gaps)
 
 ## 2. Compare values with the stockCharts project (`../stockCharts`)
@@ -20,6 +20,6 @@ Run: `python tools/compare_stockcharts.py <YYYY-MM-DD>`
   - [ ] Fri 2026-10-30 (check Thu 10-29 data)
 
 ## 3. Check for missing industries
-- [ ] List all Dow Jones US industries/sectors (DJUS*) and compare with `input/DowJonesIndex_list.csv`
-- [ ] Compare with the industry list used in `../stockCharts`
-- [ ] Add missing industries, if Yahoo has data for them (see #1)
+- [x] 2026-10-19: stockCharts (ground truth) has 103 industries in 11 sectors; ours has 103.
+      102 match. Differences: DJUSIF only in stockCharts, DJUSEH only in ours
+      (stockCharts dropped it after 2026-07-21). Decision: keep the list as it is.
